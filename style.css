@@ -1,0 +1,208 @@
+/* Reset and Base Styles */
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('images/7025936.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: black;
+    text-align: center;
+}
+
+
+
+/* Navigation Styles */
+nav {
+    background-color: #333;
+    color: rgb(32, 110, 80);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero Section - Driving School Theme */
+.hero {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('c:\Users\Dell\Desktop\team 6\project\images\mm.jpg') center/cover;
+    color: rgb(245, 245, 247);
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #f39c12;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Section Styles */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.lesson-cards, .instructor-list, .pricing-table, .testimonial-carousel {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card, .instructor, .pricing-card, .testimonial-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: perspective(500px) rotateY(0deg);
+    transition: transform 0.3s ease;
+}
+
+.card:hover, .pricing-card:hover, .testimonial-card:hover {
+    transform: perspective(500px) rotateY(10deg);
+}
+
+/* Instructor Image */
+
+/* Testimonial Carousel */
+.testimonial-carousel {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    gap: 10px;
+    animation: slide 10s infinite;
+}
+
+@keyframes slide {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+}
+
+/* FAQ Section */
+.faq-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq {
+    margin-bottom: 40px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .lesson-cards, .pricing-table, .testimonial-carousel {
+        flex-direction: column;
+    }
+
+    /* Instructor Section */
+    .instructor-list {
+        display: flex;
+        justify-content: center; /* Aligns all instructors in the center */
+        gap: 20px; /* Adds space between each instructor */
+        flex-wrap: wrap; /* Allows wrapping on smaller screens */
+        padding: 20px 0; /* Adds spacing around the section */
+    }
+
+    .instructor {
+        text-align: center; /* Centers the text under each image */
+        width: 200px; /* Ensures a consistent size for each instructor card */
+        background-color: #f9f9f9; /* Light background for contrast */
+        padding: 15px; /* Adds padding inside the instructor card */
+        border-radius: 10px; /* Softens the edges of the card */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .instructor:hover {
+        transform: scale(1.05); /* Slight zoom effect on hover */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhances the shadow on hover */
+    }
+
+    /* Instructor Image */
+    .instructor img {
+        width: 150px; /* Fixed width for consistent size */
+        height: 150px; /* Fixed height for consistent size */
+        border-radius: 50%; /* Circular image */
+        object-fit: cover; /* Ensures the image is cropped evenly */
+        margin-bottom: 10px; /* Adds space between the image and text */
+        border: 2px solid #ddd; /* Optional border around the image */
+    }
+
+    /* Instructor Name and Info */
+    .instructor h3 {
+        font-size: 1.2rem;
+        margin: 10px 0;
+        color: #333;
+    }
+
+    .instructor p {
+        font-size: 0.9rem;
+        color: #666;
+        margin: 5px 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .instructor-list {
+        flex-direction: column; /* Stack instructors vertically */
+        align-items: center; /* Align items in the center */
+    }
+
+    .instructor {
+        width: 90%; /* Makes cards take up most of the width on small screens */
+    }
+
+    .instructor img {
+        width: 120px; /* Reduce image size on smaller screens */
+        height: 120px;
+    }
+}
